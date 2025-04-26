@@ -1,0 +1,44 @@
+{
+    "upload_model_config": {
+        "upload_model": false,
+        "exp_name": "with_finetune_1"
+    },
+    "do_train": true,
+    "do_finetune": true,
+    "finetune_type": "coles",
+    "do_train_with_finetune": false,
+    "lambda_": 0.1,
+    "model_name": "SLICING",
+    "dataset_name": "instacart_preprocessed",
+    "exp_name": "exp",
+    "epoch_count_freeze_weights": 7,
+    "seed": 321321,
+    "device_name": "cpu",
+    "device_id": 0,
+    "log": "log.txt",
+    "debug_stop" : false,
+    "ablation" : false,
+    "ablation_note" : 4,
+    "train": {
+        "epoch": 30,
+        "early_stop_thr" : 3e-5,
+        "lr": 0.001,
+        "batch_size" : 32,
+        "eps" : 1e-05,
+        "betas" : [0.9, 0.999],
+        "scheduler_step" : 10,
+        "gamma" : 0.7
+    },
+    "finetune": {
+        "epoch": 10,
+        "early_stop_thr" : 3e-5,
+        "patience": 5,
+        "lr": 0.0003,
+        "batch_size" : 32,
+        "eps" : 1e-05,
+        "betas" : [0.9, 0.999],
+        "scheduler_step" : 4,
+        "gamma" : 0.5,
+        "sample_size": 3
+    }
+}
